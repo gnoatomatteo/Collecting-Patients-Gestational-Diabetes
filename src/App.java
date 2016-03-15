@@ -18,14 +18,12 @@ public class App {
 
     public static void main(String[] args) {
         ContenitoreTask container = new ContenitoreTask();
-        for(int i=0; i < 100 ; ++i) {
+        for(int i=0; i < 50 ; ++i) {
             Task task = new Task("titolo", "contenuto", "tipoTask", "importanza", new GregorianCalendar(05,05,2020) );
             container.addTask(task);
         }
-        container.save();
-        container.load();
 
-        Contenitore database = new Contenitore();
+      /*  Contenitore database = new Contenitore();
         GregorianCalendar dataCorrente = new GregorianCalendar();
         for(int i=0; i < 1000 ; i++){
             Paziente paziente = new Paziente("nome","cognome", dataCorrente, "nazionalita", 50.6f , "tipologiaDiabete");
@@ -33,7 +31,7 @@ public class App {
             database.addPaziente(paziente);
         }
         database.save();
-        database.load();
+        database.load();*/
 
         HomePage home = new HomePage(container.taskDB);
         home.setVisible(true);

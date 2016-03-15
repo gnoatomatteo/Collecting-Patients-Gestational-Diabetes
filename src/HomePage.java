@@ -24,37 +24,34 @@ public class HomePage extends JFrame {
     public HomePage(Vector<Task> vectorTask){
         super("HomePage");
         setSize(900,600);
-        setLayout(new FlowLayout());
-        listaScorrimentoTaskAttivi = createScrollAreaTask(vectorTask);
-        listaScorrimentoTaskAttivi.setBackground(new Color(0, 0, 0));
-        listaScorrimentoTaskAttivi.setMaximumSize(new Dimension(450,290));
-        listaScorrimentoTaskAttivi.setMinimumSize(new Dimension(450, 290));
-        add(listaScorrimentoTaskAttivi);
+        panelTask = new JPanel();
+        panelTask.setLayout(new BorderLayout());
+        getContentPane().add(panelTask);
 
-    }
-
-    private JScrollPane createScrollAreaTask(Vector<Task> vectorTask){
-        JPanel contentTask = new JPanel();
-        contentTask.setLayout(new GridLayout(vectorTask.size(),1));
-        JScrollPane contentScrollTask = new JScrollPane(contentTask);
-        contentScrollTask.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        contentScrollTask.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        listaScorrimentoTaskAttivi = new JScrollPane();
+        JPanel tuttiTask = new JPanel();
+        tuttiTask.setLayout(new GridLayout(vectorTask.size(),1));
 
         for(Iterator<Task> iteratore = vectorTask.iterator(); iteratore.hasNext();){
             Task aux = iteratore.next();
 
             JPanel taskPanel = new JPanel();
-            taskPanel.setLayout(new GridLayout(2,2));
+            taskPanel.setLayout(new GridLayout(3,2));
             taskPanel.add(new JLabel(aux.getTitolo()));
             taskPanel.add(new JLabel(aux.getContenuto()));
             taskPanel.add(new JLabel(aux.getImportanza()));
             taskPanel.add(new JLabel(aux.getTipoTask()));
+            JButton completato = new JButton("completato");
+            taskPanel.add(new JButton("completato"));
             taskPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+            taskPanel.setPreferredSize(new Dimension(50,90));
 
-            contentTask.add(taskPanel);
+            tuttiTask.add(taskPanel);
         }
-        return contentScrollTask;
-
+        listaScorrimentoTaskAttivi.getViewport().add(tuttiTask);
+        listaScorrimentoTaskAttivi.setPreferredSize(new Dimension(400,300));
+        panelTask.add(listaScorrimentoTaskAttivi, BorderLayout.WEST);
+        panelTask.setPreferredSize(new Dimension(400,300));
 
     }
 
