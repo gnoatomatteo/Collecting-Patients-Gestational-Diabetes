@@ -12,6 +12,24 @@ class Alimentazione{
     public String grassi;
 }
 
+class Ecografia{
+    public float DBP;
+    public float CC;
+    public float CA;
+    public int EFW;
+    public String LA; // enum("scarso", "regolare", "abbondante");
+    public GregorianCalendar dataEsecuzione;
+
+    public Ecografia(float btp, float cc, float ca, int efw, String la, GregorianCalendar gc){
+        DBP = btp;
+        CC = cc;
+        CA = ca;
+        EFW = efw;
+        LA = new String(la);
+        dataEsecuzione = new GregorianCalendar(gc.get(GregorianCalendar.DATE), gc.get(GregorianCalendar.MONTH), gc.get(GregorianCalendar.YEAR));
+    }
+}
+
 public class Paziente {
 
     /*CAMPI DATI STATISTICI*/
@@ -26,11 +44,15 @@ public class Paziente {
     private float pesoFineGravidanza;
     private Alimentazione alimentazionePreconcezionale;
     private String terapia;
+    private int emoglobinaGlicata;
     private boolean dietaSeguita;
     private String tipologiaDiabete; // obbligatorio
     private String modalitaParto;
     private int pesoBambino;
     private String notePersonali;
+    private Ecografia ecografiaTerzoTrimestre;
+    private Ecografia ecografiaOstetrica;
+    private float glicemiaNeonato;
 
     /*CAMPI DATI NON STATISTICI*/
     private GregorianCalendar dataInserimento;
@@ -83,6 +105,17 @@ public class Paziente {
     }
     public void setDataInserimento(GregorianCalendar d){dataInserimento=d;}
     public void setNumeroPaziente(int n) {numeroPaziente=n;}
+    public void setEmoglobinaGlicata(int n){ emoglobinaGlicata = n;}
+    public void setGlicemiaNeonato(float n){glicemiaNeonato=n; }
+    public void setEcografiaTerzoTrimestre(float btp, float cc, float ca, int efw, String la, GregorianCalendar gc){
+        ecografiaTerzoTrimestre = new Ecografia(btp,cc,ca,efw,la,gc);
+    }
+    public void setEcografiaOstetrica(float btp, float cc, float ca, int efw, String la, GregorianCalendar gc){
+        ecografiaOstetrica= new Ecografia(btp, cc, ca, efw, la,gc);
+    }
+
+
+
     /*METODI GET*/
     public String getNome(){
         return nome;
@@ -138,7 +171,10 @@ public class Paziente {
     public int getNumeroPaziente(){
         return numeroPaziente;
     }
-
+    public int getEmoglobinaGlicata(){return emoglobinaGlicata;}
+    public float getGlicemiaNeonato(){return glicemiaNeonato;}
+    public Ecografia getEcografiaTerzoTrimestre() {return ecografiaTerzoTrimestre;}
+    public Ecografia getEcografiaOstetrica() {return ecografiaOstetrica;}
     /*METODI FUNZIONALI*/
     public float aumentoPonderale(){
        return pesoFineGravidanza-pesoInizioGravidanza;
