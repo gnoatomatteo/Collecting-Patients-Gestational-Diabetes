@@ -18,14 +18,14 @@ public class App {
 
     public static void main(String[] args) {
         ContenitoreTask container = new ContenitoreTask();
-        for(int i=0; i < 1 ; ++i) {
+        for(int i=0; i < 25 ; ++i) {
             Task task = new Task("titolo", "contenuto", "tipoTask", "importanza", new GregorianCalendar(05,05,2020) );
             container.addTask(task);
         }
 
         Contenitore database = new Contenitore();
         GregorianCalendar dataCorrente = new GregorianCalendar();
-        for(int i=0; i < 1 ; i++){
+        for(int i=0; i < 25 ; i++){
             Paziente paziente = new Paziente("nome","cognome", dataCorrente, "nazionalita", 50.6f , "tipologiaDiabete");
             paziente.setTelefono("049929235");
 
