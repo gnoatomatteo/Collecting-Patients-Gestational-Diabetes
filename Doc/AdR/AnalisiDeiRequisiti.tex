@@ -1,0 +1,33 @@
+%Generazione delle variabili che andranno a sostituire quelle del template 'HomePage.tex'
+\newcommand{\documento}{Analisi Dei Requisiti}
+\newcommand{\nomedocumentofisico}{AnalisiDeiRequisiti\_v1\_0\_0.pdf}
+\newcommand{\versione}{1}
+\newcommand{\redazione}{Matteo Gnoato}
+\newcommand{\datacreazione}{}
+\newcommand{\datamodifica}{}
+\newcommand{\stato}{In redazione}
+
+\def\TABELLE{false}	%abilita - disabilita l'indice delle tabelle
+\def\FIGURE{false} 	%abilita - disabilita l'indice delle figure
+
+\input{../Template/layout.tex}
+\setcounter{secnumdepth}{7}
+\setcounter{tocdepth}{7}
+\begin{document}
+%inclusione template HomePage
+\input{../Template/HomePage.tex}
+\pagenumbering{Roman}
+\input{../Template/index.tex}
+
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\input{sezioni/Introduzione.tex}
+\input{sezioni/CasiD'uso.tex}
+\input{sezioni/Requisiti.tex}
+
+
+\end{document}
