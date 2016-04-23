@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.SortedMap;
 import java.util.Vector;
 
 /**
@@ -36,6 +37,7 @@ public class ContenitoreTask {
     public void addTask(Task t){
         t.setNumeroTask(taskDB.size()+taskSvolti.size()+1);
         taskDB.add(t);
+        save();
     }
 
     public void terminaTask(Task t){
@@ -48,6 +50,7 @@ public class ContenitoreTask {
                 trovato=true;
             }
         }
+        save();
     }
     public void riattivaTask(Task t){
         boolean trovato=false;
@@ -59,11 +62,13 @@ public class ContenitoreTask {
                 trovato=true;
             }
         }
+        save();
 
     }
 
     /*LOADER*/
     public void load(){
+        System.out.println("ContenitroeTask.load()");
         try{
             DocumentBuilderFactory file = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = file.newDocumentBuilder();
@@ -165,6 +170,7 @@ public class ContenitoreTask {
 
     /*SAVIOR*/
     public void save(){
+        System.out.println("ContenitoreTask.save()");
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

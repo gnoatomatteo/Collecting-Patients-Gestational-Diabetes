@@ -24,7 +24,7 @@ public class HomePage extends JFrame {
     private JLabel taskAttivi;
     private JLabel cerca;
 
-    public HomePage(Vector<Task> vectorTask){
+    public HomePage(final ContenitoreTask vectorTask){
         super("HomePage");
         setSize(900,600);
         panelMain = new JPanel();
@@ -34,9 +34,9 @@ public class HomePage extends JFrame {
 
         listaScorrimentoTaskAttivi = new JScrollPane();
         final JPanel tuttiTask = new JPanel();
-        tuttiTask.setLayout(new GridLayout(vectorTask.size(),1));
+        tuttiTask.setLayout(new GridLayout(vectorTask.taskDB.size(),1));
 
-        for(Iterator<Task> iteratore = vectorTask.iterator(); iteratore.hasNext();){
+        for(Iterator<Task> iteratore = vectorTask.taskDB.iterator(); iteratore.hasNext();){
             Task aux = iteratore.next();
 
             final JPanel taskPanel = new JPanel();
@@ -101,8 +101,11 @@ public class HomePage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // apro una pagina dove inserisco le informazioni in una form per creare un nuovo task utente
-                CreaTaskPage taskPage = new CreaTaskPage();
+                CreaTaskPage taskPage = new CreaTaskPage(vectorTask);
                 taskPage.setVisible(true);
+                tuttiTask.repaint();
+                listaScorrimentoTaskAttivi.repaint();
+                panelMain.repaint();
             }
         });
         inserisciPaziente = new JButton("inserisci nuova paziente");
