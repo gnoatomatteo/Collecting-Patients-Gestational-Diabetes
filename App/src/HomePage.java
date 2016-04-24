@@ -24,7 +24,7 @@ public class HomePage extends JFrame {
     private JLabel taskAttivi;
     private JLabel cerca;
 
-    public HomePage(final ContenitoreTask vectorTask){
+    public HomePage(final ContenitoreTask vectorTask, final Contenitore pazientiDB){
         super("HomePage");
         setSize(900,600);
         panelMain = new JPanel();
@@ -112,7 +112,8 @@ public class HomePage extends JFrame {
         inserisciPaziente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // apro una pagina dove inserisco le informazioni per inseirire una nuova paziente
+                InserisciPazientePage pageInserisciPaziente = new InserisciPazientePage(pazientiDB);
+                pageInserisciPaziente.setVisible(true);
             }
         });
         creazioneElementi.add(creaTask);

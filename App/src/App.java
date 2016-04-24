@@ -21,7 +21,7 @@ public class App {
         Contenitore database = new Contenitore();
         database.load();
         container.load();
-        HomePage home = new HomePage(container);
+        HomePage home = new HomePage(container, database);
         home.setVisible(true);
         home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

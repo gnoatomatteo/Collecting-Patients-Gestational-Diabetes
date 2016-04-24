@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.GregorianCalendar;
-import java.util.Vector;
 
 /**
  * Created by Matteo on 16/03/2016.
@@ -79,14 +78,14 @@ public class CreaTaskPage extends JFrame {
             annoTermineLabel.setBounds(10,280,80,25);
             mainPanel.add(annoTermineLabel);
 
-            String[] annoSelect = new String[70];
+            String[] annoSelect = new String[58];
             int annoAux = 1960;
-            for(int i=0; i < 70 ; ++i){
+            for(int i=0; i < 58 ; ++i){
                 annoSelect[i] = new Integer(annoAux).toString();
-                annoAux++;
                 if(annoAux == 2017){
                     break;
                 }
+                annoAux++;
             }
             final JComboBox<String> annoText = new JComboBox<>(annoSelect);
             annoText.setBounds(100,280,80,25);
