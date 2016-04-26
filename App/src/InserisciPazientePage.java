@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.GregorianCalendar;
 
 /**
@@ -410,7 +412,98 @@ public class InserisciPazientePage extends JFrame {
         mainPanel.add(annoText4);
 
         inserisci = new JButton("Inserisci");
+        inserisci.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // controllare i campi obbligatori
+                if(!(nomeText.getText().isEmpty() && cognomeText.getText().isEmpty() && nazionalitaText.getText().isEmpty() && pesoInizioGravidanzaText.getText().isEmpty())){
+                    // costruisco la paziente
+                    Integer giornoInteger = new Integer(giornoText.getSelectedItem().toString());
+                    Integer meseInteger = new Integer(numeroMese(meseText.getSelectedItem().toString()));
+                    Integer annoInteger = new Integer(annoText.getSelectedItem().toString());
+                    GregorianCalendar dataNascita = new GregorianCalendar(annoInteger, meseInteger, giornoInteger);
+                    Float pesoInizioGravidanza = new Float(pesoInizioGravidanzaText.toString());
+                    Paziente nuovo = new Paziente(nomeText.getText(), cognomeText.getText(), dataNascita, nazionalitaText.getText(), pesoInizioGravidanza.floatValue(), tipologiaDiabeteText.getSelectedItem().toString());
+                    // controllo campi non obbligatori:
+                    if(telefonoText.getText() != null){
+                        nuovo.setTelefono(telefonoText.getText());
+                    }
+                    if(paritaText.getText() != null){
+                        nuovo.setParita(paritaText.getText());
+                    }
+                    giornoInteger = new Integer(giornoText2.getSelectedItem().toString());
+                    meseInteger = new Integer(numeroMese(meseText2.getSelectedItem().toString()));
+                    annoInteger = new Integer(annoText2.getSelectedItem().toString());
+                    GregorianCalendar dataUltimaMestruzione = new GregorianCalendar(annoInteger,meseInteger,giornoInteger);
+                    nuovo.setUltimaMestruazione(dataUltimaMestruzione);
+                    if(pesoFineGravidanzaText.getText() != null){
+                        Float pesoFineGravodanza = new Float(pesoFineGravidanzaText.getText());
+                        nuovo.setPesoFineGravidanza(pesoFineGravodanza);
+                    }
+                    nuovo.setTerapia(terapiatext.getSelectedItem().toString());
+                    if(emoglobinaGlicataText.getText() != null){
+                        Integer emoglobinaGlicata = new Integer(emoglobinaGlicataText.getText());
+                        nuovo.setEmoglobinaGlicata(emoglobinaGlicata);
+                    }
+                    if(dietaSeguitaText.getSelectedItem().toString() == "si"){
+                        nuovo.setDietaSeguita(true);
+                    }
+                    else{
+                        nuovo.setDietaSeguita(false);
+                    }
+                    nuovo.setModalitaParto(modalitaPartoText.getSelectedItem().toString());
+                    if(pesoBambinoText.getText() != null){
+                        Integer pesoBambino = new Integer(pesoBambinoText.getText());
+                        nuovo.setPesoBambino(pesoBambino);
+                    }
+                    if(glicemiaNeonatoText.getText() != null){
+                        nuovo.setGlicemiaNeonato(new Float(glicemiaNeonatoText.toString()));
+                    }
+                    if(notePersonaliText.getText() != null){
+                        nuovo.setNotePersonali(notePersonaliText.getText());
+                    }
+                    // CAMPI ALIMENTAZIONE
+
+                }
+                else{
+                    //lancio messaggio d'errore'
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "ATTENZIONE: inserire tutti i campi obbligatori per inserire una nuova paziente",
+                            "Campi obbligatori non compilati",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
         inserisci.setBounds(550,510,150,25);
         mainPanel.add(inserisci);
+    }
+
+    public static int numeroMese(String meseString){
+        if (meseString == "Gennaio") {
+            return 1;
+        } else if (meseString == "Febbraio") {
+            return 2;
+        } else if (meseString == "Marzo") {
+            return 3;
+        } else if (meseString == "Aprile") {
+            return 4;
+        } else if (meseString == "maggio") {
+            return 5;
+        } else if (meseString == "Giugno") {
+            return 6;
+        } else if (meseString == "Luglio") {
+            return 7;
+        } else if (meseString == "Agosto") {
+            return 8;
+        } else if (meseString == "Settembre") {
+            return 9;
+        } else if (meseString == "Ottobre") {
+            return 10;
+        } else if (meseString == "Novembre") {
+            return 11;
+        } else if (meseString == "Dicembre") {
+            return 12;
+        }
+        return 0;
     }
 }
