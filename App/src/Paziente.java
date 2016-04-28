@@ -180,4 +180,15 @@ public class Paziente {
     public float aumentoPonderale(){
        return pesoFineGravidanza-pesoInizioGravidanza;
     }
+
+    public String toString(){
+        return nome + "       " + cognome + "          " + dataToString(dataDiNascita);
+    }
+
+    public static String dataToString(GregorianCalendar data){
+        Integer giorno = data.get(GregorianCalendar.DATE);
+        Integer mese = data.get(GregorianCalendar.MONTH)+1;
+        Integer anno = data.get(GregorianCalendar.YEAR);
+        return new String(giorno + "/"  + mese + "/" + anno);
+    }
 }

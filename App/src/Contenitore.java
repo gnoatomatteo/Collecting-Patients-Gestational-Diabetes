@@ -45,11 +45,17 @@ public class Contenitore {
         }
     }
 
+    public Vector<Paziente> getDB(){
+        return db;
+    }
+
     /*RICERCA*/
     public Vector<Paziente> search(String stringa, String specifica){
-        Vector<Paziente> aux = new Vector<Paziente>();
+        Vector<Paziente> aux = new Vector<>();
         stringa = stringa.toLowerCase();
+        int i=0;
         for(Iterator<Paziente> it= db.iterator(); it.hasNext(); ){
+            System.out.println(i);++i;
             boolean inserito = false;
             Paziente pazienteIterator = it.next();
 

@@ -83,12 +83,21 @@ public class HomePage extends JFrame {
         ricercaPanel.setLayout(new FlowLayout());
             JLabel ricercaLabel = new JLabel("Cerca");
             ricercaPanel.add(ricercaLabel);
-            JTextField ricercaText = new JTextField();
+            final JTextField ricercaText = new JTextField();
             ricercaText.setPreferredSize(new Dimension(300,25));
             ricercaPanel.add(ricercaText);
             JButton ricercaButton = new JButton("O");
             ricercaButton.setPreferredSize(new Dimension(25,23));
             ricercaPanel.add(ricercaButton);
+            ricercaButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Vector<Paziente> result = pazientiDB.search(ricercaText.getText(), "tutto");
+                    ListaRisultatiPage listaRisultati = new ListaRisultatiPage(pazientiDB.getDB());
+                    listaRisultati.setVisible(true);
+
+                }
+            });
         panelDX.add(ricercaPanel);
 
 
