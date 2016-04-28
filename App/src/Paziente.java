@@ -83,6 +83,7 @@ public class Paziente {
         pesoFineGravidanza=p;
     }
     public void setAlimentazionePreconcezionale(String c,String cc, String p, String g){
+        alimentazionePreconcezionale = new Alimentazione();
         alimentazionePreconcezionale.carbroidati=c;
         alimentazionePreconcezionale.carbroidatiComplessi=cc;
         alimentazionePreconcezionale.proteine=p;

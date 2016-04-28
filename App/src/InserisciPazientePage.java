@@ -1,7 +1,9 @@
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import java.util.GregorianCalendar;
 
 /**
@@ -49,7 +51,7 @@ public class InserisciPazientePage extends JFrame {
     * nome, cognome, dataDiNascita, nazionalita, pesiInizioGravidanza, tipologiaDiabete
     * */
 
-    public InserisciPazientePage(Contenitore pazientiDB){
+    public InserisciPazientePage(final Contenitore pazientiDB){
         super("Inserisci nuova paziente");
         super.setPreferredSize(new Dimension(800,600));
         setSize(new Dimension(800,600));
@@ -142,6 +144,7 @@ public class InserisciPazientePage extends JFrame {
         meseText2.setBounds(260,190,85,25);
         mainPanel.add(meseText2);
 
+        String[] annoSelectBreve = {"2015" , "2016"};
         final JComboBox<String> annoText2 = new JComboBox<>(annoSelect);
         annoText2.setBounds(350,190,85,25);
         mainPanel.add(annoText2);
@@ -150,6 +153,11 @@ public class InserisciPazientePage extends JFrame {
         pesoInizioGravidanzaLabel.setBounds(10,220,150,25);
         mainPanel.add(pesoInizioGravidanzaLabel);
 
+        NumberFormat format = NumberFormat.getInstance();
+        NumberFormatter formatter = new NumberFormatter(format);
+        formatter.setValueClass(Float.class);
+        formatter.setMinimum(0);
+        formatter.setMaximum(Integer.MAX_VALUE);
         final JTextField pesoInizioGravidanzaText = new JTextField();
         pesoInizioGravidanzaText.setBounds(170,220,70,25);
         mainPanel.add(pesoInizioGravidanzaText);
@@ -182,7 +190,7 @@ public class InserisciPazientePage extends JFrame {
         mainPanel.add(emoglobinaGlicataLabel);
 
         final JTextField emoglobinaGlicataText = new JTextField();
-        emoglobinaGlicataText.setBounds(170,310,150,25);
+        emoglobinaGlicataText.setBounds(170,310,70,25);
         mainPanel.add(emoglobinaGlicataText);
 
         JLabel dietaSeguitaLabel = new JLabel("Dieta seguita*:");
@@ -240,10 +248,6 @@ public class InserisciPazientePage extends JFrame {
         mainPanel.add(notePersonaliText);
 
         // ALIMENTAZIONE:
-            // meno di 2 alla settimana
-            // dalle 3 alle 5
-            // più di 6
-
         JLabel alimentazioneLabel = new JLabel("ALIMENTAZIONE SETTIMANALE:");
         alimentazioneLabel.setBounds(460,10,200,25);
         mainPanel.add(alimentazioneLabel);
@@ -345,7 +349,7 @@ public class InserisciPazientePage extends JFrame {
         meseText3.setBounds(630,270,85,25);
         mainPanel.add(meseText3);
 
-        final JComboBox<String> annoText3 = new JComboBox<>(annoSelect);
+        final JComboBox<String> annoText3 = new JComboBox<>(annoSelectBreve);
         annoText3.setBounds(630,300,85,25);
         mainPanel.add(annoText3);
 
@@ -407,7 +411,7 @@ public class InserisciPazientePage extends JFrame {
         meseText4.setBounds(630,420,85,25);
         mainPanel.add(meseText4);
 
-        final JComboBox<String> annoText4 = new JComboBox<>(annoSelect);
+        final JComboBox<String> annoText4 = new JComboBox<>(annoSelectBreve);
         annoText4.setBounds(630,450,85,25);
         mainPanel.add(annoText4);
 
@@ -416,64 +420,118 @@ public class InserisciPazientePage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // controllare i campi obbligatori
-                if(!(nomeText.getText().isEmpty() && cognomeText.getText().isEmpty() && nazionalitaText.getText().isEmpty() && pesoInizioGravidanzaText.getText().isEmpty())){
+                if (!(nomeText.getText().isEmpty() && cognomeText.getText().isEmpty() && nazionalitaText.getText().isEmpty() && pesoInizioGravidanzaText.getText().isEmpty())) {
                     // costruisco la paziente
                     Integer giornoInteger = new Integer(giornoText.getSelectedItem().toString());
                     Integer meseInteger = new Integer(numeroMese(meseText.getSelectedItem().toString()));
                     Integer annoInteger = new Integer(annoText.getSelectedItem().toString());
                     GregorianCalendar dataNascita = new GregorianCalendar(annoInteger, meseInteger, giornoInteger);
-                    Float pesoInizioGravidanza = new Float(pesoInizioGravidanzaText.toString());
+                    Float pesoInizioGravidanza = new Float(pesoInizioGravidanzaText.getText());
                     Paziente nuovo = new Paziente(nomeText.getText(), cognomeText.getText(), dataNascita, nazionalitaText.getText(), pesoInizioGravidanza.floatValue(), tipologiaDiabeteText.getSelectedItem().toString());
                     // controllo campi non obbligatori:
-                    if(telefonoText.getText() != null){
+                    if (!(telefonoText.getText().equals(""))) {
+                        System.out.println("inserito telefono");
                         nuovo.setTelefono(telefonoText.getText());
                     }
-                    if(paritaText.getText() != null){
+                    if (!(paritaText.getText().equals(""))) {
                         nuovo.setParita(paritaText.getText());
                     }
                     giornoInteger = new Integer(giornoText2.getSelectedItem().toString());
                     meseInteger = new Integer(numeroMese(meseText2.getSelectedItem().toString()));
                     annoInteger = new Integer(annoText2.getSelectedItem().toString());
-                    GregorianCalendar dataUltimaMestruzione = new GregorianCalendar(annoInteger,meseInteger,giornoInteger);
+                    GregorianCalendar dataUltimaMestruzione = new GregorianCalendar(annoInteger, meseInteger, giornoInteger);
                     nuovo.setUltimaMestruazione(dataUltimaMestruzione);
-                    if(pesoFineGravidanzaText.getText() != null){
-                        Float pesoFineGravodanza = new Float(pesoFineGravidanzaText.getText());
-                        nuovo.setPesoFineGravidanza(pesoFineGravodanza);
+                    if (!(pesoFineGravidanzaText.getText().equals(""))) {
+                        Float pesoFineGravidanza = new Float(pesoFineGravidanzaText.getText());
+                        nuovo.setPesoFineGravidanza(pesoFineGravidanza);
                     }
                     nuovo.setTerapia(terapiatext.getSelectedItem().toString());
-                    if(emoglobinaGlicataText.getText() != null){
+                    if (!(emoglobinaGlicataText.getText().equals(""))) {
                         Integer emoglobinaGlicata = new Integer(emoglobinaGlicataText.getText());
                         nuovo.setEmoglobinaGlicata(emoglobinaGlicata);
                     }
-                    if(dietaSeguitaText.getSelectedItem().toString() == "si"){
+                    if (dietaSeguitaText.getSelectedItem().toString() == "si") {
                         nuovo.setDietaSeguita(true);
-                    }
-                    else{
+                    } else {
                         nuovo.setDietaSeguita(false);
                     }
                     nuovo.setModalitaParto(modalitaPartoText.getSelectedItem().toString());
-                    if(pesoBambinoText.getText() != null){
+                    if (!(pesoBambinoText.getText().equals(""))) {
                         Integer pesoBambino = new Integer(pesoBambinoText.getText());
                         nuovo.setPesoBambino(pesoBambino);
                     }
-                    if(glicemiaNeonatoText.getText() != null){
-                        nuovo.setGlicemiaNeonato(new Float(glicemiaNeonatoText.toString()));
+                    if (!(glicemiaNeonatoText.getText().equals(""))) {
+                        nuovo.setGlicemiaNeonato(new Float(glicemiaNeonatoText.getText()));
                     }
-                    if(notePersonaliText.getText() != null){
+                    if (!(notePersonaliText.getText().equals(""))) {
                         nuovo.setNotePersonali(notePersonaliText.getText());
                     }
                     // CAMPI ALIMENTAZIONE
+                    String carboidrati = carboidratiText.getSelectedItem().toString();
+                    String carboidratiComplessi = carboidratiComplessiText.getSelectedItem().toString();
+                    String proteine = proteineText.getSelectedItem().toString();
+                    String grassi = grassiText.getSelectedItem().toString();
+                    nuovo.setAlimentazionePreconcezionale(carboidrati, carboidratiComplessi, proteine, grassi);
 
-                }
-                else{
+                    //ECOGRAFIE
+                    //ecografia terzo trimestre
+                    System.out.println(dbpText.getText().isEmpty());
+                    if (!(dbpText.getText().isEmpty() && ccText.getText().isEmpty() && caText.getText().isEmpty() && efwText.getText().isEmpty())) {
+                        Float dbp = new Float(dbpText.getText());
+                        Float cc = new Float(ccText.getText());
+                        Float ca = new Float(caText.getText());
+                        Integer efw = new Integer(efwText.getText());
+                        Integer giornoEcografiaTerzoTrimetre = new Integer(giornoText3.getSelectedItem().toString());
+                        Integer meseEcografiaTerzoTrimetre = new Integer(numeroMese(meseText3.getSelectedItem().toString()));
+                        Integer annoEcografiaTerzoTrimestre = new Integer(annoText3.getSelectedItem().toString());
+                        GregorianCalendar dataEcografiaTerzoTrimetre = new GregorianCalendar(annoEcografiaTerzoTrimestre,meseEcografiaTerzoTrimetre,giornoEcografiaTerzoTrimetre);
+                        nuovo.setEcografiaTerzoTrimestre(dbp,cc,ca,efw,laText.getSelectedItem().toString(), dataEcografiaTerzoTrimetre);
+                    } else if(!(dbpText.getText().isEmpty() || ccText.getText().isEmpty() || caText.getText().isEmpty() || efwText.getText().isEmpty())) {
+                        JOptionPane.showMessageDialog(new Frame(),
+                                "ATTENZIONE: per inserire una ecografia terzo trimestre inserire tutti i dati richiesti",
+                                "Campi obbligatori non compilati",
+                                JOptionPane.WARNING_MESSAGE);
+                    }
+                    //ecografia ostetrica
+                    System.out.println(dbpText2.getText().isEmpty());
+                    if (!(dbpText2.getText().isEmpty() && ccText2.getText().isEmpty() && caText2.getText().isEmpty() && efwText2.getText().isEmpty())) {
+                        Float dbp2 = new Float(dbpText2.getText());
+                        Float cc2 = new Float(ccText2.getText());
+                        Float ca2 = new Float(caText2.getText());
+                        Integer efw2 = new Integer(efwText2.getText());
+                        Integer giornoEcografiaOstetrica = new Integer(giornoText4.getSelectedItem().toString());
+                        Integer meseEcografiaOstetrica = new Integer(numeroMese(meseText4.getSelectedItem().toString()));
+                        Integer annoEcografiaOstetrica = new Integer(annoText4.getSelectedItem().toString());
+                        GregorianCalendar dataEcografiaOstetrica = new GregorianCalendar(annoEcografiaOstetrica,meseEcografiaOstetrica,giornoEcografiaOstetrica);
+                        nuovo.setEcografiaTerzoTrimestre(dbp2,cc2,ca2,efw2,laText.getSelectedItem().toString(), dataEcografiaOstetrica);
+                    }
+                    else if(!(dbpText2.getText().isEmpty() || ccText2.getText().isEmpty() || caText2.getText().isEmpty() || efwText2.getText().isEmpty())){
+                        JOptionPane.showMessageDialog(new Frame(),
+                                "ATTENZIONE: per inserire una ecografia ostetrica inserire tutti i dati richiesti",
+                                "Campi obbligatori non compilati",
+                                JOptionPane.WARNING_MESSAGE);
+                    }
+                    // inserisco nuovo paziente nel database
+                    pazientiDB.addPaziente(nuovo);
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Paziente inserito correttamente del sistema",
+                            "Aziene eseguita correttamente",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    Container frame = inserisci.getParent();
+                    do
+                        frame = frame.getParent();
+                    while (!(frame instanceof JFrame));
+                    ((JFrame) frame).dispose();
+            }
+            else{
                     //lancio messaggio d'errore'
                     JOptionPane.showMessageDialog(new Frame(),
                             "ATTENZIONE: inserire tutti i campi obbligatori per inserire una nuova paziente",
                             "Campi obbligatori non compilati",
                             JOptionPane.WARNING_MESSAGE);
                 }
-            }
-        });
+        }
+    });
         inserisci.setBounds(550,510,150,25);
         mainPanel.add(inserisci);
     }
