@@ -44,6 +44,61 @@ public class Contenitore {
             }
         }
     }
+
+    /*RICERCA*/
+    public Vector<Paziente> search(String stringa, String specifica){
+        Vector<Paziente> aux = new Vector<Paziente>();
+        stringa = stringa.toLowerCase();
+        for(Iterator<Paziente> it= db.iterator(); it.hasNext(); ){
+            boolean inserito = false;
+            Paziente pazienteIterator = it.next();
+
+            if(specifica == "name" || specifica == "tutto"){
+                if(pazienteIterator.getNome().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "cognome" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getCognome().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "nazionalita" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getNazionalita().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "parita" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getParita().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "terapia" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getTerapia().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "tipologiaDiabete" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getTipologiaDiabete().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+            else if((specifica == "modalitaParto" || specifica == "tutto") && inserito == false){
+                if(pazienteIterator.getModalitaParto().toLowerCase() == stringa){
+                    aux.add(pazienteIterator);
+                    inserito = true;
+                }
+            }
+        }
+        return aux;
+    }
+
     /*METODI STATISTICI*/
     public int numeroPazienti(){
         return db.size();
