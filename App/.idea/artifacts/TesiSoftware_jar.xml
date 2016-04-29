@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TesiSoftware:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TesiSoftware_jar</output-path>
+    <root id="archive" name="TesiSoftware.jar">
+      <element id="module-output" name="TesiSoftware" />
+    </root>
+  </artifact>
+</component>

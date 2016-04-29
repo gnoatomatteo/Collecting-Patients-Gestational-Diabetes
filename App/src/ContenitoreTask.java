@@ -17,7 +17,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
-import java.util.SortedMap;
 import java.util.Vector;
 
 /**
@@ -100,10 +99,10 @@ public class ContenitoreTask {
                     String giornoString= dataImpostataTermineElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                     String meseString= dataImpostataTermineElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                     String annoString= dataImpostataTermineElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                    int giorno = Integer.parseInt(giornoString);
-                    int mese = Integer.parseInt(meseString);
-                    int anno = Integer.parseInt(annoString);
-                    GregorianCalendar dataImpostataTermine= new GregorianCalendar(giorno,mese,anno);
+                    Integer giorno = new Integer(giornoString);
+                    Integer mese = new Integer(meseString);
+                    Integer anno = new Integer(annoString);
+                    GregorianCalendar dataImpostataTermine= new GregorianCalendar(anno,mese,giorno);
 
                     /*COSTRUZIONE OGGETTO*/
                     Task aux= new Task(titolo, content, tipo, importanza, dataImpostataTermine);
@@ -120,10 +119,10 @@ public class ContenitoreTask {
                     giornoString= dataCreazioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                     meseString= dataCreazioneElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                     annoString= dataCreazioneElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                    giorno = Integer.parseInt(giornoString);
-                    mese = Integer.parseInt(meseString);
-                    anno = Integer.parseInt(annoString);
-                    GregorianCalendar dataCreazione= new GregorianCalendar(giorno,mese,anno);
+                    giorno = new Integer(giornoString);
+                    mese = new Integer(meseString);
+                    anno = new Integer(annoString);
+                    GregorianCalendar dataCreazione= new GregorianCalendar(anno,mese,giorno);
                     aux.setDataCreazione(dataCreazione);
 
                     // svolto
@@ -141,10 +140,10 @@ public class ContenitoreTask {
                         giornoString = dataTerminazioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                         meseString = dataTerminazioneElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                         annoString = dataTerminazioneElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                        giorno = Integer.parseInt(giornoString);
-                        mese = Integer.parseInt(meseString);
-                        anno = Integer.parseInt(annoString);
-                        GregorianCalendar dataTerminazione = new GregorianCalendar(giorno, mese, anno);
+                        giorno = new Integer(giornoString);
+                        mese = new Integer(meseString);
+                        anno = new Integer(annoString);
+                        GregorianCalendar dataTerminazione = new GregorianCalendar(anno,mese,giorno);
                         aux.setDataTerminazione(dataTerminazione);
                     }
 

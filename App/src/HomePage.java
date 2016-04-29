@@ -46,7 +46,11 @@ public class HomePage extends JFrame {
             final JPanel panelTaskDX = new JPanel();
             panelTaskDX.setLayout(new GridLayout(4,1));
             panelTaskSX.add(new JLabel(aux.getTitolo()));
-            panelTaskSX.add(new JLabel(aux.getContenuto()));
+            JTextArea contenuto = new JTextArea(aux.getContenuto());
+            contenuto.setLineWrap(true);
+            contenuto.setWrapStyleWord(true);
+            contenuto.setEditable(false);
+            panelTaskSX.add(contenuto);
             panelTaskDX.add(new JLabel(aux.getImportanza()));
             panelTaskDX.add(new JLabel("Termine:  " + App.dataToString(aux.getDataImpostataTermine())));
             panelTaskDX.add(new JLabel(aux.getTipoTask()));
@@ -121,8 +125,11 @@ public class HomePage extends JFrame {
         inserisciPaziente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                InserisciPazientePage pageInserisciPaziente = new InserisciPazientePage(pazientiDB);
+                InserisciPazientePage pageInserisciPaziente = new InserisciPazientePage(pazientiDB, vectorTask);
                 pageInserisciPaziente.setVisible(true);
+                tuttiTask.repaint();
+                listaScorrimentoTaskAttivi.repaint();
+                panelMain.repaint();
             }
         });
         creazioneElementi.add(creaTask);

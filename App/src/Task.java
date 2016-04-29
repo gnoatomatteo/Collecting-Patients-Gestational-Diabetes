@@ -22,9 +22,10 @@ public class Task {
         contenuto=c;
         tipoTask= tt;
         importanza=imp;
-        svolto=false;
         dataCreazione = new GregorianCalendar();
-        dataImpostataTermine = new GregorianCalendar(data.get(GregorianCalendar.DATE), data.get(GregorianCalendar.MONTH), data.get(GregorianCalendar.YEAR));
+        svolto=false;
+        dataImpostataTermine = new GregorianCalendar();
+        dataImpostataTermine = data;
     }
 
     /*METOSI SET*/

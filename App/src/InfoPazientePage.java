@@ -46,7 +46,7 @@ public class InfoPazientePage extends JFrame {
         paritaLabel.setBounds(10,160,250,25);
         mainPanel.add(paritaLabel);
 
-        JLabel dataUltimaMestruazioneLabel = new JLabel("Data ultima mestruazione: " + p.getUltimaMestruazione());
+        JLabel dataUltimaMestruazioneLabel = new JLabel("Data ultima mestruazione: " + dataToString(p.getUltimaMestruazione()));
         dataUltimaMestruazioneLabel.setBounds(10,190,250,25);
         mainPanel.add(dataUltimaMestruazioneLabel);
 

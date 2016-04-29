@@ -176,6 +176,28 @@ public class Paziente {
     public float getGlicemiaNeonato(){return glicemiaNeonato;}
     public Ecografia getEcografiaTerzoTrimestre() {return ecografiaTerzoTrimestre;}
     public Ecografia getEcografiaOstetrica() {return ecografiaOstetrica;}
+    public String[] getComplete(){
+        String[] aux = new String[6];
+        if(getEcografiaTerzoTrimestre() == null){
+            aux[0] = "EcografiaTerzoTrimestre";
+        }
+        if(getEcografiaOstetrica() == null){
+            aux[1] = "EcografiaOstetrica";
+        }
+        if(telefono == null){
+            aux[2] = "Telefono";
+        }
+        if(pesoFineGravidanza == 0 || parita == null || modalitaParto == null || pesoBambino == 0 || glicemiaNeonato == 0){
+            aux[3] = "Gravidanza";
+        }
+        if(terapia == null || emoglobinaGlicata == 0 || tipologiaDiabete == null){
+            aux[4] = "Diabete";
+        }
+        if(notePersonali == null){
+            aux[5] = "NotePersonali";
+        }
+        return aux;
+    }
     /*METODI FUNZIONALI*/
     public float aumentoPonderale(){
        return pesoFineGravidanza-pesoInizioGravidanza;

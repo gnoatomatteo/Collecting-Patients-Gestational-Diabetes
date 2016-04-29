@@ -51,7 +51,7 @@ public class InserisciPazientePage extends JFrame {
     * nome, cognome, dataDiNascita, nazionalita, pesiInizioGravidanza, tipologiaDiabete
     * */
 
-    public InserisciPazientePage(final Contenitore pazientiDB){
+    public InserisciPazientePage(final Contenitore pazientiDB, final ContenitoreTask taskDB){
         super("Inserisci nuova paziente");
         super.setPreferredSize(new Dimension(800,600));
         setSize(new Dimension(800,600));
@@ -513,6 +513,32 @@ public class InserisciPazientePage extends JFrame {
                     }
                     // inserisco nuovo paziente nel database
                     pazientiDB.addPaziente(nuovo);
+                    String[] complete = new String[6];
+                    complete = nuovo.getComplete();
+                    if(complete[0] == "EcografiaTerzoTrimestre"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire informazioni riguardanti l'Ecografia Terzo Trimestre", "task automatico", "Rinviabile", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
+                    if(complete[1] == "EcografiaOstetrica"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire informazioni riguardanti l'Ecografia Ostetrica", "task automatico", "Rinviabile", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
+                    if(complete[2] == "Telefono"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire un numero di telefono per la paziente", "task automatico", "Attenzione", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
+                    if(complete[3] == "Gravidanza"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire informazioni riguardanti la gravidanza della paziente", "task automatico", "Rinviabile", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
+                    if(complete[4] == "Diabete"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire informazioni riguardanti il diabete della paziente", "task automatico", "Attenzione", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
+                    if(complete[5] == "NotePersonali"){
+                        Task task  = new Task("Paziente: " + nuovo.getNome() + " " + nuovo.getCognome(), "Inserire nota personale per questa paziente", "task automatico", "Rinviabile", new GregorianCalendar());
+                        taskDB.addTask(task);
+                    }
                     JOptionPane.showMessageDialog(new Frame(),
                             "Paziente inserito correttamente del sistema",
                             "Aziene eseguita correttamente",

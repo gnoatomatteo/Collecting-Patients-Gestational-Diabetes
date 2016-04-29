@@ -34,6 +34,7 @@ public class Contenitore {
     public void addPaziente(Paziente p){
         p.setNumeroPaziente(db.size()+1);
         db.add(p);
+        save();
     }
     public void removePaziente(Paziente p){
         boolean trovato=false;
@@ -43,6 +44,7 @@ public class Contenitore {
                 trovato=true;
             }
         }
+        save();
     }
 
     public Vector<Paziente> getDB(){
@@ -137,10 +139,10 @@ public class Contenitore {
                     String giornoString= dataDiNascita.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                     String meseString= dataDiNascita.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                     String annoString= dataDiNascita.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                    int giorno = Integer.parseInt(giornoString);
-                    int mese = Integer.parseInt(meseString+1);
-                    int anno = Integer.parseInt(annoString);
-                    GregorianCalendar ddn= new GregorianCalendar(giorno,mese,anno);
+                    Integer giorno = new Integer(giornoString);
+                    Integer mese = new Integer(meseString);
+                    Integer anno = new Integer(annoString);
+                    GregorianCalendar ddn= new GregorianCalendar(anno,mese,giorno);
 
                     //nazionalità
                     String naz= paziente.getElementsByTagName("nazionalita").item(0).getFirstChild().getNodeValue();
@@ -182,10 +184,10 @@ public class Contenitore {
                         giornoString = dataDiNascita.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                         meseString = dataDiNascita.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                         annoString = dataDiNascita.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                        giorno = Integer.parseInt(giornoString);
-                        mese = Integer.parseInt(meseString);
-                        anno = Integer.parseInt(annoString);
-                        GregorianCalendar dum = new GregorianCalendar(giorno, mese, anno);
+                        giorno = new Integer(giornoString);
+                        mese = new Integer(meseString);
+                        anno = new Integer(annoString);
+                        GregorianCalendar dum = new GregorianCalendar(anno,mese,giorno);
                         aux.setUltimaMestruazione(dum);
                     }
 
@@ -275,10 +277,10 @@ public class Contenitore {
                             giornoString = dataEsecuzioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                             meseString = dataEsecuzioneElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                             annoString = dataEsecuzioneElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                            giorno = Integer.parseInt(giornoString);
-                            mese = Integer.parseInt(meseString);
-                            anno = Integer.parseInt(annoString);
-                            GregorianCalendar dataEsecuzione = new GregorianCalendar(giorno,mese,anno);
+                            giorno = new Integer(giornoString);
+                            mese = new Integer(meseString);
+                            anno = new Integer(annoString);
+                            GregorianCalendar dataEsecuzione = new GregorianCalendar(anno,mese,giorno);
                         float dpb = Float.parseFloat(DPBString);
                         float cc = Float.parseFloat(CCString);
                         float ca = Float.parseFloat(CAString);
@@ -305,10 +307,10 @@ public class Contenitore {
                         giornoString = dataEsecuzioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                         meseString = dataEsecuzioneElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                         annoString = dataEsecuzioneElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                        giorno = Integer.parseInt(giornoString);
-                        mese = Integer.parseInt(meseString);
-                        anno = Integer.parseInt(annoString);
-                        GregorianCalendar dataEsecuzione = new GregorianCalendar(giorno,mese,anno);
+                        giorno = new Integer(giornoString);
+                        mese = new Integer(meseString);
+                        anno = new Integer(annoString);
+                        GregorianCalendar dataEsecuzione = new GregorianCalendar(anno,mese,giorno);
                         float dpb = Float.parseFloat(DPBString);
                         float cc = Float.parseFloat(CCString);
                         float ca = Float.parseFloat(CAString);
@@ -343,10 +345,10 @@ public class Contenitore {
                         giornoString = dataInserimentoElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
                         meseString = dataInserimentoElement.getElementsByTagName("mese").item(0).getFirstChild().getNodeValue();
                         annoString = dataInserimentoElement.getElementsByTagName("anno").item(0).getFirstChild().getNodeValue();
-                        giorno = Integer.parseInt(giornoString);
-                        mese = Integer.parseInt(meseString);
-                        anno = Integer.parseInt(annoString);
-                        GregorianCalendar dataInserimento = new GregorianCalendar(giorno, mese, anno);
+                        giorno = new Integer(giornoString);
+                        mese = new Integer(meseString);
+                        anno = new Integer(annoString);
+                        GregorianCalendar dataInserimento = new GregorianCalendar(anno,mese,giorno);
                         aux.setDataInserimento(dataInserimento);
                     }
 
