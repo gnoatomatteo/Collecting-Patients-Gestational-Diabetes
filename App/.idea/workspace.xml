@@ -27,7 +27,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61288846">
+    <splitter split-orientation="horizontal" split-proportion="0.6235698">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.48168498">
           <split-first>
@@ -35,8 +35,8 @@
               <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/App.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.16666667">
-                      <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                    <state vertical-scroll-proportion="0.46346784">
+                      <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
                       <folding>
                         <element signature="imports" expanded="true" />
                       </folding>
@@ -62,35 +62,45 @@
                 <entry file="file://$PROJECT_DIR$/src/Contenitore.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state vertical-scroll-proportion="0.0">
-                      <caret line="353" column="0" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
+                      <caret line="621" column="49" selection-start-line="621" selection-start-column="49" selection-end-line="621" selection-end-column="49" />
                       <folding>
                         <element signature="method#addPaziente#0;class#Contenitore#0" expanded="false" />
                         <element signature="method#removePaziente#0;class#Contenitore#0" expanded="false" />
                         <element signature="method#search#0;class#Contenitore#0" expanded="false" />
-                        <element signature="method#save#0;class#Contenitore#0" expanded="false" />
+                        <element signature="method#load#0;class#Contenitore#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="true">
+              <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/HomePage.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.7037037">
-                      <caret line="54" column="89" selection-start-line="54" selection-start-column="89" selection-end-line="54" selection-end-column="89" />
+                    <state vertical-scroll-proportion="0.0">
+                      <caret line="135" column="49" selection-start-line="135" selection-start-column="49" selection-end-line="135" selection-end-column="49" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="ContenitoreTask.java" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/ContenitoreTask.java">
+              <file leaf-file-name="InserisciPazientePage.java" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/InserisciPazientePage.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.40676117">
+                      <caret line="505" column="76" selection-start-line="505" selection-start-column="76" selection-end-line="505" selection-end-column="76" />
+                      <folding>
+                        <element signature="method#numeroMese#0;class#InserisciPazientePage#0" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="InfoPazientePage.java" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/InfoPazientePage.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state vertical-scroll-proportion="0.0">
-                      <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-                      <folding>
-                        <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-                      </folding>
+                      <caret line="145" column="80" selection-start-line="145" selection-start-column="80" selection-end-line="145" selection-end-column="80" />
+                      <folding />
                     </state>
                   </provider>
                 </entry>
@@ -101,31 +111,55 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Paziente.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ContenitoreTask.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ContenitoreTask.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Contenitore.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Contenitore.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="287" column="88" selection-start-line="287" selection-start-column="88" selection-end-line="287" selection-end-column="88" />
+                  <folding>
+                    <element signature="method#addPaziente#0;class#Contenitore#0" expanded="false" />
+                    <element signature="method#removePaziente#0;class#Contenitore#0" expanded="false" />
+                    <element signature="method#search#0;class#Contenitore#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TesiSoftware.iml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TesiSoftware.iml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Paziente.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Paziente.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="170" column="5" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.8527808">
+                  <caret line="114" column="67" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="67" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="InfoPazientePage.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/InfoPazientePage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Task.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Task.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4074074">
-                  <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -136,9 +170,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="132" column="63" selection-start-line="132" selection-start-column="63" selection-end-line="132" selection-end-column="63" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -169,14 +201,14 @@
         <option value="$PROJECT_DIR$/src/gg.form" />
         <option value="$PROJECT_DIR$/src/CreaTaskPage.java" />
         <option value="$PROJECT_DIR$/src/ListaRisultatiPage.java" />
-        <option value="$PROJECT_DIR$/src/App.java" />
-        <option value="$PROJECT_DIR$/src/Paziente.java" />
-        <option value="$PROJECT_DIR$/src/InserisciPazientePage.java" />
-        <option value="$PROJECT_DIR$/src/InfoPazientePage.java" />
-        <option value="$PROJECT_DIR$/src/Contenitore.java" />
         <option value="$PROJECT_DIR$/src/ContenitoreTask.java" />
-        <option value="$PROJECT_DIR$/src/HomePage.java" />
         <option value="$PROJECT_DIR$/src/Task.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/HomePage.java" />
+        <option value="$PROJECT_DIR$/src/Contenitore.java" />
+        <option value="$PROJECT_DIR$/src/Paziente.java" />
+        <option value="$PROJECT_DIR$/src/InfoPazientePage.java" />
+        <option value="$PROJECT_DIR$/src/InserisciPazientePage.java" />
       </list>
     </option>
   </component>
@@ -189,8 +221,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1691" />
-    <option name="width" value="5052" />
-    <option name="height" value="1055" />
+    <option name="width" value="5044" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -237,6 +269,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,8 +324,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -620,40 +652,46 @@
       <workItem from="1461919508651" duration="888000" />
       <workItem from="1461921643641" duration="2809000" />
       <workItem from="1461926694590" duration="1396000" />
+      <workItem from="1462297092824" duration="98000" />
+      <workItem from="1462297452679" duration="389000" />
+      <workItem from="1462304515711" duration="1148000" />
+      <workItem from="1462305820277" duration="12000" />
+      <workItem from="1462306127292" duration="2848000" />
+      <workItem from="1462463338771" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102027000" />
+    <option name="totallyTimeSpent" value="106655000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1691" y="0" width="5052" height="1055" extended-state="1" />
-    <editor active="true" />
+    <frame x="-1691" y="0" width="5044" height="1054" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.205074" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1310564" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13086714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104761906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2042328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -695,7 +733,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -734,9 +772,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,9 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="336" column="48" selection-start-line="336" selection-start-column="48" selection-end-line="336" selection-end-column="48" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -785,9 +819,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -827,9 +859,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,9 +891,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,9 +923,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,13 +1031,13 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/jre/lib/jfxrt.jar!/MediaErrors.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18888889">
           <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
         </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
@@ -1038,77 +1064,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TesiSoftware.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18518518">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CreaTaskPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="132" column="63" selection-start-line="132" selection-start-column="63" selection-end-line="132" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InserisciPazientePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22222222">
-          <caret line="528" column="21" selection-start-line="528" selection-start-column="21" selection-end-line="528" selection-end-column="21" />
-          <folding>
-            <element signature="method#numeroMese#0;class#InserisciPazientePage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InfoPazientePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Contenitore.java">
+    <entry file="file://$PROJECT_DIR$/src/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="353" column="0" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding>
-            <element signature="method#addPaziente#0;class#Contenitore#0" expanded="false" />
-            <element signature="method#removePaziente#0;class#Contenitore#0" expanded="false" />
-            <element signature="method#search#0;class#Contenitore#0" expanded="false" />
-            <element signature="method#save#0;class#Contenitore#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ContenitoreTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-          <folding>
-            <element signature="method#save#0;class#ContenitoreTask#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paziente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="170" column="5" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16666667">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.46346784">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1117,17 +1092,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7037037">
-          <caret line="54" column="89" selection-start-line="54" selection-start-column="89" selection-end-line="54" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="135" column="49" selection-start-line="135" selection-start-column="49" selection-end-line="135" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task.java">
+    <entry file="file://$PROJECT_DIR$/src/ContenitoreTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4074074">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Contenitore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="621" column="49" selection-start-line="621" selection-start-column="49" selection-end-line="621" selection-end-column="49" />
+          <folding>
+            <element signature="method#addPaziente#0;class#Contenitore#0" expanded="false" />
+            <element signature="method#removePaziente#0;class#Contenitore#0" expanded="false" />
+            <element signature="method#search#0;class#Contenitore#0" expanded="false" />
+            <element signature="method#load#0;class#Contenitore#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InfoPazientePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="145" column="80" selection-start-line="145" selection-start-column="80" selection-end-line="145" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TesiSoftware.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paziente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="198" column="19" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InserisciPazientePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40676117">
+          <caret line="505" column="76" selection-start-line="505" selection-start-column="76" selection-end-line="505" selection-end-column="76" />
+          <folding>
+            <element signature="method#numeroMese#0;class#InserisciPazientePage#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

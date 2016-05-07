@@ -26,7 +26,7 @@ class Ecografia{
         CA = ca;
         EFW = efw;
         LA = new String(la); // regolare, scarso, abbondante
-        dataEsecuzione = new GregorianCalendar(gc.get(GregorianCalendar.DATE), gc.get(GregorianCalendar.MONTH), gc.get(GregorianCalendar.YEAR));
+        dataEsecuzione = gc;
     }
 }
 

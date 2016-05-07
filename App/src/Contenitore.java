@@ -271,7 +271,7 @@ public class Contenitore {
                         String EFWString = ecografiaTerzoTrimestreElement.getElementsByTagName("EFW").item(0).getFirstChild().getNodeValue();
                         String LA = ecografiaTerzoTrimestreElement.getElementsByTagName("LA").item(0).getFirstChild().getNodeValue();
                             //recupero data
-                            data = ecografiaTerzoTrimestreElement.getElementsByTagName("dataEsecuzione").item(0).getChildNodes();
+                            data = ecografiaTerzoTrimestreElement.getElementsByTagName("dataEsecuzione");
                             dataNodo = data.item(0);
                             Element dataEsecuzioneElement = (Element)dataNodo;
                             giornoString = dataEsecuzioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
@@ -290,18 +290,18 @@ public class Contenitore {
 
                     //ecografiaOstetrica
                     NodeList ecografiaOstetrica = paziente.getElementsByTagName("ecografiaOstetrica");
-                    Node ecografiaOstetricaNodo = ecografiaTerzoTrimestre.item(0);
+                    Node ecografiaOstetricaNodo = ecografiaOstetrica.item(0);
                     Element ecografiaOstetricaElement = (Element)ecografiaOstetricaNodo;
-                    DPBNode = ecografiaTerzoTrimestreElement.getElementsByTagName("DPB").item(0).getChildNodes();
+                    DPBNode = ecografiaOstetricaElement.getElementsByTagName("DPB").item(0).getChildNodes();
                     nValue = (Node) DPBNode.item(0);
                     if(!(nValue == null)){
-                        String DPBString = ecografiaTerzoTrimestreElement.getElementsByTagName("DPB").item(0).getFirstChild().getNodeValue();
-                        String CCString = ecografiaTerzoTrimestreElement.getElementsByTagName("CC").item(0).getFirstChild().getNodeValue();
-                        String CAString = ecografiaTerzoTrimestreElement.getElementsByTagName("CA").item(0).getFirstChild().getNodeValue();
-                        String EFWString = ecografiaTerzoTrimestreElement.getElementsByTagName("EFW").item(0).getFirstChild().getNodeValue();
-                        String LA = ecografiaTerzoTrimestreElement.getElementsByTagName("LA").item(0).getFirstChild().getNodeValue();
+                        String DPBString = ecografiaOstetricaElement.getElementsByTagName("DPB").item(0).getFirstChild().getNodeValue();
+                        String CCString = ecografiaOstetricaElement.getElementsByTagName("CC").item(0).getFirstChild().getNodeValue();
+                        String CAString = ecografiaOstetricaElement.getElementsByTagName("CA").item(0).getFirstChild().getNodeValue();
+                        String EFWString = ecografiaOstetricaElement.getElementsByTagName("EFW").item(0).getFirstChild().getNodeValue();
+                        String LA = ecografiaOstetricaElement.getElementsByTagName("LA").item(0).getFirstChild().getNodeValue();
                         //recupero data
-                        data = ecografiaTerzoTrimestreElement.getElementsByTagName("dataEsecuzione").item(0).getChildNodes();
+                        data = ecografiaOstetricaElement.getElementsByTagName("dataEsecuzione");
                         dataNodo = data.item(0);
                         Element dataEsecuzioneElement = (Element)dataNodo;
                         giornoString = dataEsecuzioneElement.getElementsByTagName("giorno").item(0).getFirstChild().getNodeValue();
@@ -408,19 +408,19 @@ public class Contenitore {
 
                     //elemento giorno di dataDiNascita
                     Element giornoDataDiNascita = doc.createElement("giorno");
-                    Integer giornoInteger = it.getDataDiNascita().get(GregorianCalendar.DATE);
+                    Integer giornoInteger = new Integer(it.getDataDiNascita().get(GregorianCalendar.DATE));
                     giornoDataDiNascita.setTextContent(giornoInteger.toString());
                     dataDiNascita.appendChild(giornoDataDiNascita);
 
                     //elemento mese di dataDiNascita
                     Element meseDataDiNascita = doc.createElement("mese");
-                    Integer meseInteger = it.getDataDiNascita().get(GregorianCalendar.MONTH);
+                    Integer meseInteger = new Integer(it.getDataDiNascita().get(GregorianCalendar.MONTH));
                     meseDataDiNascita.setTextContent(meseInteger.toString());
                     dataDiNascita.appendChild(meseDataDiNascita);
 
                     //elemento anno di dataDiNascita
                     Element annoDataDiNascita = doc.createElement("anno");
-                    Integer annoInteger = it.getDataDiNascita().get(GregorianCalendar.YEAR);
+                    Integer annoInteger = new Integer(it.getDataDiNascita().get(GregorianCalendar.YEAR));
                     annoDataDiNascita.setTextContent(annoInteger.toString());
                     dataDiNascita.appendChild(annoDataDiNascita);
 
@@ -550,18 +550,10 @@ public class Contenitore {
                 Element EFW = doc.createElement("EFW");
                 Element LA = doc.createElement("LA");
                 Element dataEsecuzione = doc.createElement("dataEsecuzione");
-                ecografiaTerzoTrimestre.appendChild(DPB);
-                ecografiaTerzoTrimestre.appendChild(CC);
-                ecografiaTerzoTrimestre.appendChild(CA);
-                ecografiaTerzoTrimestre.appendChild(EFW);
-                ecografiaTerzoTrimestre.appendChild(LA);
                 ecografiaTerzoTrimestre.appendChild(dataEsecuzione);
                 Element giorno = doc.createElement("giorno");
                 Element mese = doc.createElement("mese");
                 Element anno = doc.createElement("anno");
-                dataEsecuzione.appendChild(giorno);
-                dataEsecuzione.appendChild(mese);
-                dataEsecuzione.appendChild(anno);
                 if(it.getEcografiaTerzoTrimestre() != null){
                     Float DPBFloat = it.getEcografiaTerzoTrimestre().DBP;
                     DPB.setTextContent(DPBFloat.toString());
@@ -573,12 +565,20 @@ public class Contenitore {
                     EFW.setTextContent(EFWInteger.toString());
                     LA.setTextContent(it.getEcografiaTerzoTrimestre().LA);
                     giornoInteger = it.getEcografiaTerzoTrimestre().dataEsecuzione.get(GregorianCalendar.DATE);
-                    meseInteger = it.getEcografiaTerzoTrimestre().dataEsecuzione.get(GregorianCalendar.MONTH) + 1;
+                    meseInteger = it.getEcografiaTerzoTrimestre().dataEsecuzione.get(GregorianCalendar.MONTH);
                     annoInteger = it.getEcografiaTerzoTrimestre().dataEsecuzione.get(GregorianCalendar.YEAR);
                     giorno.setTextContent(giornoInteger.toString());
                     mese.setTextContent(meseInteger.toString());
                     anno.setTextContent(annoInteger.toString());
                 }
+                ecografiaTerzoTrimestre.appendChild(DPB);
+                ecografiaTerzoTrimestre.appendChild(CC);
+                ecografiaTerzoTrimestre.appendChild(CA);
+                ecografiaTerzoTrimestre.appendChild(EFW);
+                ecografiaTerzoTrimestre.appendChild(LA);
+                dataEsecuzione.appendChild(giorno);
+                dataEsecuzione.appendChild(mese);
+                dataEsecuzione.appendChild(anno);
                 paziente.appendChild(ecografiaTerzoTrimestre);
 
                 //elemento ecografiaOstetrica
@@ -589,18 +589,12 @@ public class Contenitore {
                 EFW = doc.createElement("EFW");
                 LA = doc.createElement("LA");
                 dataEsecuzione = doc.createElement("dataEsecuzione");
-                ecografiaOstetrica.appendChild(DPB);
-                ecografiaOstetrica.appendChild(CC);
-                ecografiaOstetrica.appendChild(CA);
-                ecografiaOstetrica.appendChild(EFW);
-                ecografiaOstetrica.appendChild(LA);
+
                 ecografiaOstetrica.appendChild(dataEsecuzione);
                 giorno = doc.createElement("giorno");
                 mese = doc.createElement("mese");
                 anno = doc.createElement("anno");
-                dataEsecuzione.appendChild(giorno);
-                dataEsecuzione.appendChild(mese);
-                dataEsecuzione.appendChild(anno);
+
                 if(it.getEcografiaOstetrica() != null){
                     Float DPBFloat = it.getEcografiaOstetrica().DBP;
                     DPB.setTextContent(DPBFloat.toString());
@@ -612,12 +606,20 @@ public class Contenitore {
                     EFW.setTextContent(EFWInteger.toString());
                     LA.setTextContent(it.getEcografiaOstetrica().LA);
                     giornoInteger = it.getEcografiaOstetrica().dataEsecuzione.get(GregorianCalendar.DATE);
-                    meseInteger = it.getEcografiaOstetrica().dataEsecuzione.get(GregorianCalendar.MONTH) + 1;
+                    meseInteger = it.getEcografiaOstetrica().dataEsecuzione.get(GregorianCalendar.MONTH);
                     annoInteger = it.getEcografiaOstetrica().dataEsecuzione.get(GregorianCalendar.YEAR);
                     giorno.setTextContent(giornoInteger.toString());
                     mese.setTextContent(meseInteger.toString());
                     anno.setTextContent(annoInteger.toString());
                 }
+                ecografiaOstetrica.appendChild(DPB);
+                ecografiaOstetrica.appendChild(CC);
+                ecografiaOstetrica.appendChild(CA);
+                ecografiaOstetrica.appendChild(EFW);
+                ecografiaOstetrica.appendChild(LA);
+                dataEsecuzione.appendChild(giorno);
+                dataEsecuzione.appendChild(mese);
+                dataEsecuzione.appendChild(anno);
                 paziente.appendChild(ecografiaOstetrica);
 
                 //elemento glicemiaNeonato

@@ -118,19 +118,19 @@ public class InfoPazientePage extends JFrame {
         if(p.getEcografiaTerzoTrimestre() != null) {
 
             JLabel dbpTerzoTrimetreLabel = new JLabel("DBP: " + p.getEcografiaTerzoTrimestre().DBP);
-            dbpTerzoTrimetreLabel.setBounds(300, 190, 50, 25);
+            dbpTerzoTrimetreLabel.setBounds(300, 190, 80, 25);
             mainPanel.add(dbpTerzoTrimetreLabel);
 
             JLabel ccTerzoTrimetreLabel = new JLabel("CC: " + p.getEcografiaTerzoTrimestre().CC);
-            ccTerzoTrimetreLabel.setBounds(400, 190, 50, 25);
+            ccTerzoTrimetreLabel.setBounds(400, 190, 80, 25);
             mainPanel.add(ccTerzoTrimetreLabel);
 
             JLabel caTerzoTrimestreLabel = new JLabel("CA: " + p.getEcografiaTerzoTrimestre().CA);
-            caTerzoTrimestreLabel.setBounds(300, 220, 50, 25);
+            caTerzoTrimestreLabel.setBounds(300, 220, 80, 25);
             mainPanel.add(caTerzoTrimestreLabel);
 
             JLabel efwTerzoTrimestre = new JLabel("EFW: " + p.getEcografiaTerzoTrimestre().EFW);
-            efwTerzoTrimestre.setBounds(400, 220, 50, 25);
+            efwTerzoTrimestre.setBounds(400, 220, 80, 25);
             mainPanel.add(efwTerzoTrimestre);
 
             JLabel laTerzoTrimestreLabel = new JLabel("LA: " + p.getEcografiaTerzoTrimestre().LA);
@@ -144,23 +144,23 @@ public class InfoPazientePage extends JFrame {
 
         if(p.getEcografiaOstetrica() != null) {
             JLabel ecografiaOstetricaLabel = new JLabel("ECOGRAFIA OSTETRICA:");
-            ecografiaOstetricaLabel.setBounds(300, 310, 50, 25);
+            ecografiaOstetricaLabel.setBounds(300, 310, 250, 25);
             mainPanel.add(ecografiaOstetricaLabel);
 
             JLabel dbpOstetrica = new JLabel("DBP: " + p.getEcografiaOstetrica().DBP);
-            dbpOstetrica.setBounds(300, 340, 50, 25);
+            dbpOstetrica.setBounds(300, 340, 80, 25);
             mainPanel.add(dbpOstetrica);
 
             JLabel ccOstetrica = new JLabel("CC: " + p.getEcografiaOstetrica().CC);
-            ccOstetrica.setBounds(400, 340, 50, 25);
+            ccOstetrica.setBounds(400, 340, 80, 25);
             mainPanel.add(ccOstetrica);
 
             JLabel caOstetrica = new JLabel("CA: " + p.getEcografiaOstetrica().CA);
-            caOstetrica.setBounds(300, 370, 50, 25);
+            caOstetrica.setBounds(300, 370, 80, 25);
             mainPanel.add(caOstetrica);
 
             JLabel efwOstetrica = new JLabel("EFW: " + p.getEcografiaOstetrica().EFW);
-            efwOstetrica.setBounds(400, 370, 50, 25);
+            efwOstetrica.setBounds(400, 370, 80, 25);
             mainPanel.add(efwOstetrica);
 
             JLabel laOstetrica = new JLabel("LA: " + p.getEcografiaOstetrica().LA);

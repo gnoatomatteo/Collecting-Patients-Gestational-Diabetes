@@ -503,7 +503,7 @@ public class InserisciPazientePage extends JFrame {
                         Integer meseEcografiaOstetrica = new Integer(numeroMese(meseText4.getSelectedItem().toString()));
                         Integer annoEcografiaOstetrica = new Integer(annoText4.getSelectedItem().toString());
                         GregorianCalendar dataEcografiaOstetrica = new GregorianCalendar(annoEcografiaOstetrica,meseEcografiaOstetrica,giornoEcografiaOstetrica);
-                        nuovo.setEcografiaTerzoTrimestre(dbp2,cc2,ca2,efw2,laText.getSelectedItem().toString(), dataEcografiaOstetrica);
+                        nuovo.setEcografiaOstetrica(dbp2,cc2,ca2,efw2,laText2.getSelectedItem().toString(), dataEcografiaOstetrica);
                     }
                     else if(!(dbpText2.getText().isEmpty() || ccText2.getText().isEmpty() || caText2.getText().isEmpty() || efwText2.getText().isEmpty())){
                         JOptionPane.showMessageDialog(new Frame(),
