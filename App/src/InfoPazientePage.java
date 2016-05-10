@@ -1,11 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.GregorianCalendar;
 
 /**
  * Created by break_000 on 28/04/2016.
  */
 public class InfoPazientePage extends JFrame {
+
+    private JButton modifica;
+
     public static String dataToString(GregorianCalendar data){
         Integer giorno = data.get(GregorianCalendar.DATE);
         Integer mese = data.get(GregorianCalendar.MONTH)+1;
@@ -13,7 +18,7 @@ public class InfoPazientePage extends JFrame {
         return new String(giorno + "/"  + mese + "/" + anno);
     }
 
-    public InfoPazientePage(Paziente p){
+    public InfoPazientePage(final Paziente p){
         super(p.getNome() + " "  + p.getCognome());
         super.setPreferredSize(new Dimension(800,550));
         setSize(new Dimension(800,550));
@@ -183,8 +188,22 @@ public class InfoPazientePage extends JFrame {
         notePersonaliArea.setBounds(530,40,230,150);
         mainPanel.add(notePersonaliArea);
 
-        JButton modifica = new JButton("MODIFICA");
+        modifica = new JButton("MODIFICA");
         modifica.setBounds(640,450, 120, 30);
         mainPanel.add(modifica);
+
+        modifica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModificaPaziente modificaPaziente = new ModificaPaziente(p);
+                modificaPaziente.setVisible(true);
+
+                Container frame = modifica.getParent();
+                do
+                    frame = frame.getParent();
+                while (!(frame instanceof JFrame));
+                ((JFrame) frame).dispose();
+            }
+        });
     }
 }
