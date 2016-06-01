@@ -41,23 +41,21 @@ public class ContenitoreTask {
 
     public void terminaTask(Task t){
         boolean trovato=false;
-        for(Iterator<Task> it= taskDB.iterator(); it.hasNext() && !trovato; it.next()) {
-            if (it.equals(t)){
-                t.setSvolto(true);
-                taskSvolti.add(t);
-                it.remove();
-                trovato=true;
+        for(Iterator<Task> it= taskDB.iterator(); it.hasNext() && !trovato;) {
+            Task aux = it.next();
+            if (aux.equals(t)){
+                aux.setSvolto(true);
+                trovato = true;
             }
         }
         save();
     }
     public void riattivaTask(Task t){
         boolean trovato=false;
-        for(Iterator<Task> it= taskSvolti.iterator(); it.hasNext() && !trovato; it.next()) {
+        for(Iterator<Task> it= taskSvolti.iterator(); it.hasNext() && !trovato;) {
+            Task aux = it.next();
             if (it.equals(t)){
-                t.setSvolto(false);
-                taskDB.add(t);
-                it.remove();
+                aux.setSvolto(false);
                 trovato=true;
             }
         }

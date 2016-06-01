@@ -37,7 +37,7 @@ public class HomePage extends JFrame {
         tuttiTask.setLayout(new GridLayout(vectorTask.taskDB.size(),1));
 
         for(Iterator<Task> iteratore = vectorTask.taskDB.iterator(); iteratore.hasNext();){
-            Task aux = iteratore.next();
+            final Task aux = iteratore.next();
 
             final JPanel taskPanel = new JPanel();
             taskPanel.setLayout(new GridLayout(1,2));
@@ -59,6 +59,8 @@ public class HomePage extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     // sposto il task nel vector dei task conclusi
+                    vectorTask.terminaTask(aux);
+                    //ristampo la lista aggiornata dei task
                     tuttiTask.remove(taskPanel);
                     tuttiTask.repaint();
                     listaScorrimentoTaskAttivi.repaint();
@@ -96,12 +98,22 @@ public class HomePage extends JFrame {
             ricercaButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Vector<Paziente> result = pazientiDB.search(ricercaText.getText(), "tutto");
-                    ListaRisultatiPage listaRisultati = new ListaRisultatiPage(pazientiDB.getDB());
+                    Vector<Paziente> result = pazientiDB.search(ricercaText.getText());
+                    ListaRisultatiPage listaRisultati = new ListaRisultatiPage(result);
                     listaRisultati.setVisible(true);
-
                 }
             });
+        Integer nPazienti = new Integer(pazientiDB.numeroPazienti());
+        JButton trovaTutto = new JButton(nPazienti.toString());
+        ricercaPanel.add(trovaTutto);
+        trovaTutto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaRisultatiPage listaRisultati = new ListaRisultatiPage(pazientiDB.getDB());
+                listaRisultati.setVisible(true);
+            }
+        });
+
         panelDX.add(ricercaPanel);
 
 

@@ -52,56 +52,38 @@ public class Contenitore {
     }
 
     /*RICERCA*/
-    public Vector<Paziente> search(String stringa, String specifica){
+    public Vector<Paziente> search(String stringa){
         Vector<Paziente> aux = new Vector<>();
-        stringa = stringa.toLowerCase();
-        int i=0;
-        for(Iterator<Paziente> it= db.iterator(); it.hasNext(); ){
-            System.out.println(i);++i;
-            boolean inserito = false;
-            Paziente pazienteIterator = it.next();
+        stringa = stringa.toUpperCase();
+        for(Iterator<Paziente> it= db.iterator(); it.hasNext(); ) {
+            Paziente paziente = it.next();
 
-            if(specifica == "name" || specifica == "tutto"){
-                if(pazienteIterator.getNome().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            boolean match = false;
+
+            if(stringa.equals(paziente.getNome())){
+                match = true;
             }
-            else if((specifica == "cognome" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getCognome().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getCognome())){
+                match = true;
             }
-            else if((specifica == "nazionalita" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getNazionalita().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getNazionalita())){
+                match = true;
             }
-            else if((specifica == "parita" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getParita().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getTelefono())){
+                match = true;
             }
-            else if((specifica == "terapia" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getTerapia().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getTerapia())){
+                match = true;
             }
-            else if((specifica == "tipologiaDiabete" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getTipologiaDiabete().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getTipologiaDiabete())){
+                match = true;
             }
-            else if((specifica == "modalitaParto" || specifica == "tutto") && inserito == false){
-                if(pazienteIterator.getModalitaParto().toLowerCase() == stringa){
-                    aux.add(pazienteIterator);
-                    inserito = true;
-                }
+            else if(stringa.equals(paziente.getModalitaParto())){
+                match = true;
+            }
+
+            if(match){
+                aux.add(paziente);
             }
         }
         return aux;
